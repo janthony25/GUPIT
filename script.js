@@ -1,48 +1,23 @@
-// Immediately log if script is running
-console.log('Script is running');
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const header = document.getElementById('header');
+const menuIcon = hamburger.querySelector('.menu-icon');
+const closeIcon = hamburger.querySelector('.close-icon');
 
-// DOM Elements
-const menuBtn = document.querySelector('#menuBtn');
-const mobileMenu = document.querySelector('#mobileMenu');
-const closeMenuBtn = document.querySelector('#closeMenuBtn');
+// Toggle mobile menu
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+});
 
-// Debug log to check if elements are found
-console.log('menuBtn:', menuBtn);
-console.log('mobileMenu:', mobileMenu);
-console.log('closeMenuBtn:', closeMenuBtn);
-
-// Very simple toggle function
-function toggleMenu() {
-    console.log('Toggle function called');
-    if (mobileMenu) {
-        console.log('Current mobile menu classes:', mobileMenu.classList);
-        if (mobileMenu.classList.contains('translate-x-full')) {
-            console.log('Opening menu');
-            mobileMenu.classList.remove('translate-x-full');
-            mobileMenu.classList.add('translate-x-0');
-        } else {
-            console.log('Closing menu');
-            mobileMenu.classList.add('translate-x-full');
-            mobileMenu.classList.remove('translate-x-0');
-        }
+// Add scroll effect
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        header.classList.add('bg-[#2D2D2D]', 'shadow-lg');
+        header.classList.remove('backdrop-blur-sm', 'bg-black/50');
+    } else {
+        header.classList.add('backdrop-blur-sm', 'bg-black/50');
+        header.classList.remove('bg-[#2D2D2D]', 'shadow-lg');
     }
-}
-
-// Add click listeners with debug logs
-if (menuBtn) {
-    console.log('Adding click listener to menu button');
-    menuBtn.onclick = (e) => {
-        e.preventDefault();
-        console.log('Menu button clicked');
-        toggleMenu();
-    };
-}
-
-if (closeMenuBtn) {
-    console.log('Adding click listener to close button');
-    closeMenuBtn.onclick = (e) => {
-        e.preventDefault();
-        console.log('Close button clicked');
-        toggleMenu();
-    };
-}
+});
