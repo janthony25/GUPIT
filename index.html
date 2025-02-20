@@ -3,15 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
     <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <title>Gupit</title>
 </head>
 <body>
+
+    <!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-sm bg-black/50" id="header">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <h1 class="playfair text-3xl font-bold text-white">GUPIT</h1>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#" class="text-white hover:text-pink-200 transition-colors">Men</a>
+                <a href="#" class="text-white hover:text-pink-200 transition-colors">Women</a>
+                <a href="#" class="text-white hover:text-pink-200 transition-colors">Kids</a>
+                <button class="bg-pink-200 text-black font-medium rounded-md px-6 py-2 transition-colors duration-300 hover:bg-pink-300">
+                    Book Now
+                </button>
+            </nav>
+
+            <!-- Hamburger Menu Button -->
+            <button class="lg:hidden text-white p-2" id="hamburger">
+                <!-- Menu Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- Close Icon (hidden by default) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 close-icon hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav class="nav-menu lg:hidden absolute w-full backdrop-blur-sm bg-black/50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#" class="text-white hover:text-pink-200 transition-colors playfair text-2xl">Men</a>
+                <a href="#" class="text-white hover:text-pink-200 transition-colors playfair text-2xl">Women</a>
+                <a href="#" class="text-white hover:text-pink-200 transition-colors playfair text-2xl">Kids</a>
+                <button class="bg-pink-200 text-black font-medium rounded-md px-6 py-2 transition-colors duration-300 hover:bg-pink-300 w-full">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
     <section class="relative h-screen w-full overflow-hidden bg-pink-100">
         <!-- Dark background -->
         <div class="absolute top-0 left-0 w-full lg:w-1/2 h-full bg-[#2D2D2D]"></div>
@@ -54,5 +103,31 @@
         
         </div>
     </section>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const header = document.getElementById('header');
+        const menuIcon = hamburger.querySelector('.menu-icon');
+        const closeIcon = hamburger.querySelector('.close-icon');
+    
+        // Toggle mobile menu
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    
+        // Add scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.classList.add('bg-[#2D2D2D]', 'shadow-lg');
+                header.classList.remove('backdrop-blur-sm', 'bg-black/50');
+            } else {
+                header.classList.add('backdrop-blur-sm', 'bg-black/50');
+                header.classList.remove('bg-[#2D2D2D]', 'shadow-lg');
+            }
+        });
+    </script>
 </body>
 </html>
