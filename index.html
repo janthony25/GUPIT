@@ -61,48 +61,50 @@
 </header>
 
 
-    <section class="relative h-screen w-full overflow-hidden bg-pink-100">
-        <!-- Dark background -->
-        <div class="absolute top-0 left-0 w-full lg:w-1/2 h-full bg-[#2D2D2D]"></div>
-        
-        <!-- Content grid -->
-        <div class="grid h-full lg:grid-cols-2">
-            <!-- Left content -->
-            <div class="relative z-20 flex flex-col justify-center px-8 2xl:px-52 pt-20 ">
-                <h1 class="playfair text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6">GUPIT</h1>
-                <div class="flex flex-col gap-2 mb-8">
-                    <p class="playfair w-fit text-3xl lg:text-4xl text-white ">MEN</p>
-                    <p class="playfair text-3xl lg:text-4xl text-pink-200">WOMEN</p>
-                    <p class="playfair text-3xl lg:text-4xl text-white">KIDS</p>
-                </div>
-                <p class="playfair text-2xl lg:text-3xl text-pink-200 mb-8">WE STYLE IT ALL!</p>
-                <div class="flex gap-4">
-                    <button class="bg-white text-black font-medium rounded-md px-8 py-4 transition-colors duration-300 hover:bg-gray-300 ">Book Now</button>
-                    <button class="bg-pink-200 text-black font-medium rounded-md px-12 py-4 transition-colors duration-300 hover:bg-pink-300 ">View Services</button>
-                </div>
-            </div>
+<section class="relative h-screen w-full overflow-hidden bg-pink-100">
+    <!-- Dark background -->
+    <div class="absolute top-0 left-0 w-full lg:w-1/2 h-full bg-[#2D2D2D]"></div>
+    
+    <!-- Content grid -->
+    <div class="grid h-full lg:grid-cols-2">
+        <!-- Left content -->
+        <div class="relative z-20 flex flex-col justify-center px-8 2xl:px-52 pt-20">
+            <!-- Mobile overlay with reduced blur -->
+            <div class="absolute inset-0 bg-black/20 backdrop-blur-[2px] -z-10 lg:hidden"></div>
             
-           
-          
-                <img 
-                    src="./images/blonde-girl.png" 
-                    alt="Styling model" 
-                    class="absolute bottom-0  sm:-right-[110%] md:z-10 md:-right-[70%] lg:-right-[50%]  xl:-right-[40%] 2xl:-right-[35%]  h-full w-auto max-w-none object-contain z-10
-                    [@media(width=768px)_and_(height<=1024px)]:-right-[110%] 
-                    [@media(width=820px)_and_(height<=1180px)]:-right-[125%] 
-                    [@media(width=912px)_and_(height<=1368px)]:-right-[130%]
-                    [@media(width=1024px)_and_(height<=1366px)]:-right-[120%]
-                    [@media(width=853px)_and_(height<=1280px)]:-right-[140%]
-                    [@media(width=1024px)_and_(height<=600px)]:-right-[40%]
-                    [@media(width=540px)_and_(height<=720px)]:-right-[120%]"
-                >
-                <img src="./images/curly-haird-guy.png" 
-                     alt="curly-haird-guy"
-                     class="absolute bottom-0 right-[10%] sm:right-[20%] lg:right-[30%] 2xl:right-[25%] h-[108%] w-auto max-w-none object-contain -z-0"
-                     >
-        
+            <h1 class="playfair text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6">GUPIT</h1>
+            <div class="flex flex-col gap-2 mb-8">
+                <p class="playfair w-fit text-3xl lg:text-4xl text-white">MEN</p>
+                <p class="playfair text-3xl lg:text-4xl text-pink-200">WOMEN</p>
+                <p class="playfair text-3xl lg:text-4xl text-white">KIDS</p>
+            </div>
+            <p class="playfair text-2xl lg:text-3xl text-pink-200 mb-8">WE STYLE IT ALL!</p>
+            <div class="flex gap-4">
+                <button class="bg-white text-black font-medium rounded-md px-8 py-4 transition-colors duration-300 hover:bg-gray-300">Book Now</button>
+                <button class="bg-pink-200 text-black font-medium rounded-md px-12 py-4 transition-colors duration-300 hover:bg-pink-300">View Services</button>
+            </div>
         </div>
-    </section>
+        
+        <!-- Images -->
+        <img 
+            src="./images/blonde-girl.png" 
+            alt="Styling model" 
+            class="absolute bottom-0 sm:-right-[110%] md:z-10 md:-right-[70%] lg:-right-[50%] xl:-right-[40%] 2xl:-right-[35%] h-full w-auto max-w-none object-contain z-10
+            [@media(width=768px)_and_(height<=1024px)]:-right-[110%] 
+            [@media(width=820px)_and_(height<=1180px)]:-right-[125%] 
+            [@media(width=912px)_and_(height<=1368px)]:-right-[130%]
+            [@media(width=1024px)_and_(height<=1366px)]:-right-[120%]
+            [@media(width=853px)_and_(height<=1280px)]:-right-[140%]
+            [@media(width=1024px)_and_(height<=600px)]:-right-[40%]
+            [@media(width=540px)_and_(height<=720px)]:-right-[120%]"
+        >
+        <img 
+            src="./images/curly-haird-guy.png" 
+            alt="curly-haird-guy"
+            class="absolute bottom-0 right-[10%] sm:right-[20%] lg:right-[30%] 2xl:right-[25%] h-[108%] w-auto max-w-none object-contain -z-0"
+        >
+    </div>
+</section>
 
     <script>
         const hamburger = document.getElementById('hamburger');
